@@ -1,0 +1,71 @@
+@import "tailwindcss";
+
+:root {
+  --bg: #edf3ef;
+  --surface: #ffffff;
+  --surface-soft: #f7fbf8;
+  --line: #d8e6de;
+  --ink: #13263a;
+  --ink-muted: #506174;
+  --brand: #0f766e;
+  --brand-soft: #cffafe;
+  --warn: #d97706;
+  --danger: #dc2626;
+  --ok: #15803d;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  color: var(--ink);
+  background:
+    radial-gradient(900px 420px at 0% 0%, rgb(15 118 110 / 16%), transparent 60%),
+    radial-gradient(760px 360px at 100% 10%, rgb(217 119 6 / 14%), transparent 62%),
+    linear-gradient(180deg, #f8fbf9 0%, var(--bg) 55%, #e7eee9 100%);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+::selection {
+  background: rgb(15 118 110 / 20%);
+  color: #0f172a;
+}
+
+.glass-surface {
+  border: 1px solid rgb(255 255 255 / 80%);
+  background: linear-gradient(170deg, rgb(255 255 255 / 88%), rgb(247 251 248 / 92%));
+  box-shadow: 0 30px 70px rgb(15 23 42 / 10%);
+  backdrop-filter: blur(10px);
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes borderPulse {
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 rgb(15 118 110 / 20%);
+  }
+  50% {
+    box-shadow: 0 0 0 10px rgb(15 118 110 / 0%);
+  }
+}
+
+.animate-rise {
+  animation: rise 480ms ease-out both;
+}
+
+.animate-pulse-border {
+  animation: borderPulse 2.3s ease-in-out infinite;
+}
