@@ -19,8 +19,8 @@ const bodyFont = Space_Grotesk({
 });
 
 export const metadata: Metadata = {
-  title: "OpenClaw Control Panel",
-  description: "Operational dashboard foundation for managing OpenClaw gateways.",
+  title: "KHA-10 Stream Ops Dashboard",
+  description: "Real-time admin dashboard for gateway telemetry and websocket operations.",
 };
 
 export default function RootLayout({
@@ -31,7 +31,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${headingFont.variable} ${bodyFont.variable} ${monoFont.variable}`}
+        className={`${headingFont.variable} ${bodyFont.variable} ${monoFont.variable} font-[var(--font-body)]`}
       >
         {children}
       </body>

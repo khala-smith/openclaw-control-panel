@@ -5,12 +5,12 @@ import { formatStatusLabel, getStatusTone } from "./status";
 describe("getStatusTone", () => {
   it("maps healthy states", () => {
     expect(getStatusTone("connected")).toBe("healthy");
-    expect(getStatusTone("operational")).toBe("healthy");
+    expect(getStatusTone("live")).toBe("healthy");
   });
 
   it("maps warning states", () => {
     expect(getStatusTone("degraded")).toBe("warning");
-    expect(getStatusTone(" pending ")).toBe("warning");
+    expect(getStatusTone("reconnecting")).toBe("warning");
   });
 
   it("defaults to idle for unknown values", () => {

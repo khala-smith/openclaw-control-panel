@@ -5,16 +5,20 @@ const statusToneMap: Record<string, StatusTone> = {
   healthy: "healthy",
   connected: "healthy",
   synced: "healthy",
+  live: "healthy",
   degraded: "warning",
   pending: "warning",
   throttled: "warning",
   unstable: "warning",
+  reconnecting: "warning",
   critical: "critical",
   blocked: "critical",
   failed: "critical",
   idle: "idle",
   paused: "idle",
   scheduled: "idle",
+  offline: "idle",
+  connecting: "idle",
 };
 
 export function getStatusTone(status: string): StatusTone {
